@@ -1,8 +1,8 @@
 import org.junit.Test;
-// Below import means we do not need to instantiate the Assert class:
 import java.util.ArrayList;
 import java.util.List;
 
+// Below import means we do not need to instantiate the Assert class:
 import static org.junit.Assert.*;
 
 public class MainLectureTest {
@@ -48,5 +48,19 @@ public class MainLectureTest {
         String language = "PHP";
         assertTrue(language.contains("H"));
         assertFalse(language.contains("J"));
+    }
+
+    @Test
+    public void testReturnGreeting() {
+        assertEquals("Well, hello!", MainLecture.returnGreeting("hello"));
+        assertEquals("Well, howdy!", MainLecture.returnGreeting("howdy"));
+        assertEquals("Well, good day!", MainLecture.returnGreeting("good day"));
+    }
+
+    @Test
+    public void testAdd() {
+        assertEquals(4, MainLecture.add(2, 2));
+        assertEquals(2, MainLecture.add(-1, 3));
+        assertEquals(5, MainLecture.add(2, 3));
     }
 }
